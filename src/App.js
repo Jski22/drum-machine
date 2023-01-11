@@ -1,10 +1,10 @@
-import { Card } from 'semantic-ui-react'
+import { Segment } from 'semantic-ui-react'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Card>This is a Card</Card>
+      <Segment inverted>This is a Card</Segment>
     </div>
   );
 }
