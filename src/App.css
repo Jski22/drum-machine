@@ -8,10 +8,10 @@
   text-align: center;
 }
 
-.ui.segment {
+.ui.container {
   background: black;
 }
 
-.ui.massive.button {
-  font-size: calc(25px + 2vmin);
+.ui.grid.centered.row {
+  padding: 0;
 }
