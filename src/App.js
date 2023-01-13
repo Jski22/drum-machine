@@ -1,14 +1,23 @@
-import { Container, Button, Grid } from 'semantic-ui-react'
+import { Container, Button, Grid } from 'semantic-ui-react';
+import audio from './assets/Heater-1.mp3';
 import './App.css';
+import React from 'react';
 
 function App() {
+
+  function playAudio() {
+    new Audio(audio).play();
+  }
+
   return (
     <div className="App">
       <Container>
         <Grid>
           <Grid.Row centered>
             <Grid.Column>
-              <Button size='massive' inverted color='red'>Q</Button>
+              <Button size='massive' inverted color='red' onClick={playAudio}> 
+                Q
+              </Button>
             </Grid.Column>
             <Grid.Column>
               <Button size='massive' inverted color='red'>W</Button>
