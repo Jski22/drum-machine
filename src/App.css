@@ -10,8 +10,11 @@
 
 .ui.container {
   background: black;
+  width: 65rem;
+  height: 50vh;
 }
 
-.ui.grid.centered.row {
-  padding: 0;
-}
+/*.ui.grid>.row>.column {
+  width: 7rem;
+  padding: 0px;
+}*/
