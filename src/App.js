@@ -6,8 +6,9 @@ import React from 'react';
 
 function App() {
 
-  function playAudio() {
-    new Audio(heater1).play();
+  function playAudio(str) {
+    var audio = document.getElementById(str); 
+    audio.play();
   }
 
   function playAudio1() {
@@ -20,7 +21,8 @@ function App() {
         <Grid>
           <Grid.Row>
             <Grid.Column width='2'>
-              <Button size='massive' inverted color='red' onClick={playAudio}> 
+              <Button size='massive' inverted color='red' value="PLAY" onClick={ () => playAudio("clip")}> 
+                <audio id="clip" src={heater1}></audio>
                 Q
               </Button>
             </Grid.Column>
