@@ -20,64 +20,69 @@ function App() {
 
   return (
     <div className="App">
-      <Container>
+      <Container id="drum-machine">
         <Grid>
-          <Grid.Row>
-            <Grid.Column width='2'>
-              <Button size='massive' inverted color='red' value="PLAY" onClick={ () => playAudio("clip")}> 
-                <audio id="clip" src={heater1}></audio>
+          <Grid.Row centered>
+            <Grid.Column>
+              <Button size='massive' inverted color='red' onClick={ () => playAudio("Q")} className="drum-pad"> 
+                <audio id="Q" src={heater1} className="clip"></audio>
                 Q
               </Button>
             </Grid.Column>
-            <Grid.Column width='2'>
-              <Button size='massive' inverted color='red' onClick={ () => playAudio("clip1")}>
-                <audio id="clip1" src={heater2}></audio>
+            <Grid.Column>
+              <Button size='massive' inverted color='red' onClick={ () => playAudio("W")} className="drum-pad">
+                <audio id="W" src={heater2} className="clip"></audio>
                 W
               </Button>
             </Grid.Column>
-            <Grid.Column width='2'>
-              <Button size='massive' inverted color='red' onClick={ () => playAudio("clip2")}>
-                <audio id="clip2" src={heater3}></audio>
+            <Grid.Column>
+              <Button size='massive' inverted color='red' onClick={ () => playAudio("E")} className="drum-pad">
+                <audio id="E" src={heater3} className="clip"></audio>
                 E
               </Button>
             </Grid.Column>
-            <Grid.Column width='2'>
-              <Button size='massive' inverted color='red' onClick={ () => playAudio("clip3")}>
-                <audio id="clip3" src={heater4}></audio>
+            <Grid.Column>
+              <Button size='massive' inverted color='red' onClick={ () => playAudio("A")} className="drum-pad">
+                <audio id="A" src={heater4} className="clip"></audio>
                 A
               </Button>
             </Grid.Column>
-            <Grid.Column width='2'>
-              <Button size='massive' inverted color='red' onClick={ () => playAudio("clip4")}>
-                <audio id="clip4" src={clap}></audio>
+            <Grid.Column>
+              <Button size='massive' inverted color='red' onClick={ () => playAudio("S")} className="drum-pad">
+                <audio id="S" src={clap} className="clip"></audio>
                 S
               </Button>
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row>
-            <Grid.Column width='3'>
-              <Button size='massive' inverted color='red' onClick={ () => playAudio("clip5")}>
-                <audio id="clip5" src={openHH}></audio>
+          <Grid.Row centered>
+            <Grid.Column>
+              <Button size='massive' inverted color='orange' onClick={ () => playAudio("D")} className="drum-pad">
+                <audio id="D" src={openHH} className="clip"></audio>
                 D
               </Button>
             </Grid.Column>
-            <Grid.Column width='2'>
-              <Button size='massive' inverted color='red' onClick={ () => playAudio("clip6")}>
-                <audio id="clip6" src={kicknhat}></audio>
+            <Grid.Column>
+              <Button size='massive' inverted color='orange' onClick={ () => playAudio("Z")} className="drum-pad">
+                <audio id="Z" src={kicknhat} className="clip"></audio>
                 Z
               </Button>
             </Grid.Column>
-            <Grid.Column width='2'>
-              <Button size='massive' inverted color='red' onClick={ () => playAudio("clip7")}>
-                <audio id="clip7" src={kick}></audio>
+            <Grid.Column>
+              <Button size='massive' inverted color='orange' onClick={ () => playAudio("X")} className="drum-pad">
+                <audio id="X" src={kick} className="clip"></audio>
                 X
               </Button>
             </Grid.Column>
-            <Grid.Column width='2'>
-              <Button size='massive' inverted color='red' onClick={ () => playAudio("clip8")}>
-                <audio id="clip8" src={closeHH}></audio>
+            <Grid.Column>
+              <Button size='massive' inverted color='orange' onClick={ () => playAudio("C")} className="drum-pad">
+                <audio id="C" src={closeHH} className="clip"></audio>
                 C
               </Button>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
+              <p>Display description here</p>
             </Grid.Column>
           </Grid.Row>
         </Grid>
