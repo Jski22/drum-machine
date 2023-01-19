@@ -11,84 +11,100 @@ import closeHH from './assets/Cev_H2.mp3';
 import './App.css';
 import React from 'react';
 
-function App() {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-  function playAudio(str) {
-    var audio = document.getElementById(str); 
-    audio.play();
+    this.state = {
+      display: ""
+    };
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  return (
-    <div className="App">
-      <Container id="drum-machine">
-        <Grid>
-          <Grid.Row centered>
-            <Grid.Column>
-              <Button size='massive' inverted color='red' onClick={ () => playAudio("Q")} className="drum-pad"> 
-                <audio id="Q" src={heater1} className="clip"></audio>
-                Q
-              </Button>
-            </Grid.Column>
-            <Grid.Column>
-              <Button size='massive' inverted color='red' onClick={ () => playAudio("W")} className="drum-pad">
-                <audio id="W" src={heater2} className="clip"></audio>
-                W
-              </Button>
-            </Grid.Column>
-            <Grid.Column>
-              <Button size='massive' inverted color='red' onClick={ () => playAudio("E")} className="drum-pad">
-                <audio id="E" src={heater3} className="clip"></audio>
-                E
-              </Button>
-            </Grid.Column>
-            <Grid.Column>
-              <Button size='massive' inverted color='red' onClick={ () => playAudio("A")} className="drum-pad">
-                <audio id="A" src={heater4} className="clip"></audio>
-                A
-              </Button>
-            </Grid.Column>
-            <Grid.Column>
-              <Button size='massive' inverted color='red' onClick={ () => playAudio("S")} className="drum-pad">
-                <audio id="S" src={clap} className="clip"></audio>
-                S
-              </Button>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row centered>
-            <Grid.Column>
-              <Button size='massive' inverted color='orange' onClick={ () => playAudio("D")} className="drum-pad">
-                <audio id="D" src={openHH} className="clip"></audio>
-                D
-              </Button>
-            </Grid.Column>
-            <Grid.Column>
-              <Button size='massive' inverted color='orange' onClick={ () => playAudio("Z")} className="drum-pad">
-                <audio id="Z" src={kicknhat} className="clip"></audio>
-                Z
-              </Button>
-            </Grid.Column>
-            <Grid.Column>
-              <Button size='massive' inverted color='orange' onClick={ () => playAudio("X")} className="drum-pad">
-                <audio id="X" src={kick} className="clip"></audio>
-                X
-              </Button>
-            </Grid.Column>
-            <Grid.Column>
-              <Button size='massive' inverted color='orange' onClick={ () => playAudio("C")} className="drum-pad">
-                <audio id="C" src={closeHH} className="clip"></audio>
-                C
-              </Button>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              <p>Display description here</p>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
-    </div>
-  );
+  handleClick(event) {
+    this.setState({
+      display: event.target.value
+    });
+  }
+
+  render() {
+    function playAudio(str) {
+      let audio = document.getElementById(str); 
+      audio.play();
+    }
+
+    return (
+      <div className="App">
+        <Container id="drum-machine">
+          <Grid>
+            <Grid.Row centered>
+              <Grid.Column>
+                <Button size='massive' inverted color='red' value="Heater 1" onClick={ (event) => {playAudio("Q"); this.handleClick(event);}} className="drum-pad"> 
+                  <audio id="Q" src={heater1} className="clip"></audio>
+                  Q
+                </Button>
+              </Grid.Column>
+              <Grid.Column>
+                <Button size='massive' inverted color='red' value="Heater 2" onClick={ (event) => {playAudio("W"); this.handleClick(event);}} className="drum-pad">
+                  <audio id="W" src={heater2} className="clip"></audio>
+                  W
+                </Button>
+              </Grid.Column>
+              <Grid.Column>
+                <Button size='massive' inverted color='red' value="Heater 3" onClick={ (event) => {playAudio("E"); this.handleClick(event);}} className="drum-pad">
+                  <audio id="E" src={heater3} className="clip"></audio>
+                  E
+                </Button>
+              </Grid.Column>
+              <Grid.Column>
+                <Button size='massive' inverted color='red' value="Heater 4" onClick={ (event) => {playAudio("A"); this.handleClick(event);}} className="drum-pad">
+                  <audio id="A" src={heater4} className="clip"></audio>
+                  A
+                </Button>
+              </Grid.Column>
+              <Grid.Column>
+                <Button size='massive' inverted color='red' value="Clap" onClick={ (event) => {playAudio("S"); this.handleClick(event);}} className="drum-pad">
+                  <audio id="S" src={clap} className="clip"></audio>
+                  S
+                </Button>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row centered>
+              <Grid.Column>
+                <Button size='massive' inverted color='orange' value="Open HH" onClick={ (event) => {playAudio("D"); this.handleClick(event);}} className="drum-pad">
+                  <audio id="D" src={openHH} className="clip"></audio>
+                  D
+                </Button>
+              </Grid.Column>
+              <Grid.Column>
+                <Button size='massive' inverted color='orange' value="Kick n' Hat" onClick={ (event) => {playAudio("Z"); this.handleClick(event);}} className="drum-pad">
+                  <audio id="Z" src={kicknhat} className="clip"></audio>
+                  Z
+                </Button>
+              </Grid.Column>
+              <Grid.Column>
+                <Button size='massive' inverted color='orange' value="Kick" onClick={ (event) => {playAudio("X"); this.handleClick(event);}} className="drum-pad">
+                  <audio id="X" src={kick} className="clip"></audio>
+                  X
+                </Button>
+              </Grid.Column>
+              <Grid.Column>
+                <Button size='massive' inverted color='orange' value="Closed HH" onClick={ (event) => {playAudio("C"); this.handleClick(event);}} className="drum-pad">
+                  <audio id="C" src={closeHH} className="clip"></audio>
+                  C
+                </Button>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column>
+                <p>{this.state.display}</p>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Container>
+      </div>
+    );
+  }
 }
 
 export default App;
