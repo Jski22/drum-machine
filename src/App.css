@@ -1,5 +1,5 @@
 .App {
-  background-color: #282c34;
+  background-color: #0e0f10;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,8 +17,19 @@
   width: 65rem;
   height: 60vh;
   color: white;
+  border: solid 5px white;
+  border-radius: 10px;
+  box-shadow: 5px 10px 6px 6px #888888;
+}
+
+.ui.grid>.row {
+  padding-top: 30px;
 }
 
 .ui.grid>.row>.column {
   width: 11rem;
+}
+
+p {
+  font-size: calc(15px + 3vmin);
 }
