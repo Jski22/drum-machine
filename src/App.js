@@ -35,6 +35,9 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        <header>
+          <h1>Drum Machine</h1>
+        </header>
         <Container id="drum-machine">
           <Grid>
             <Grid.Row centered>
