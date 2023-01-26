@@ -19,6 +19,7 @@ class App extends React.Component {
       display: ""
     };
     this.handleClick = this.handleClick.bind(this);
+    /*this.handleKeyPress = this.handleKeyPress.bind(this);*/
   }
 
   handleClick(event) {
@@ -27,10 +28,22 @@ class App extends React.Component {
     });
   }
 
+  /*handleKeyPress(event) {
+    if(event.key === 'Enter') {
+    console.log("a key was pressed");
+    }
+  }*/
+
   render() {
     function playAudio(str) {
       let audio = document.getElementById(str); 
       audio.play();
+    }
+    window.document.onkeydown = function(event) {
+      let keyPress = event.key.toUpperCase();
+      if(keyPress === "Q") {
+        playAudio("Q");
+      }
     }
 
     return (
