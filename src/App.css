@@ -33,3 +33,16 @@
 p {
   font-size: calc(15px + 3vmin);
 }
+
+@media (max-width: 600px) {
+  .ui.massive.button {
+    font-size: calc(12px + 3vmin);
+  }
+  .ui.grid>.row>.column {
+    width: 9rem;
+    padding-bottom: 13px;
+  }
+  .ui.grid>.row {
+    padding-top: 20px;
+  }
+}

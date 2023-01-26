@@ -19,7 +19,6 @@ class App extends React.Component {
       display: ""
     };
     this.handleClick = this.handleClick.bind(this);
-    /*this.handleKeyPress = this.handleKeyPress.bind(this);*/
   }
 
   handleClick(event) {
@@ -28,29 +27,17 @@ class App extends React.Component {
     });
   }
 
-  /*handleKeyPress(event) {
-    if(event.key === 'Enter') {
-    console.log("a key was pressed");
-    }
-  }*/
-
   render() {
     function playAudio(str) {
       let audio = document.getElementById(str); 
       audio.play();
     }
-    window.document.onkeydown = function(event) {
-      let keyPress = event.key.toUpperCase();
-      if(keyPress === "Q") {
-        playAudio("Q");
-      }
-    }
+    window.document.addEventListener('keydown', (event) => {
+      playAudio(event.key.toUpperCase());
+    }); 
 
     return (
       <div className="App">
-        <header>
-          <h1>Drum Machine</h1>
-        </header>
         <Container id="drum-machine">
           <Grid>
             <Grid.Row centered>
